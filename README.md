@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/d-paulus/scrape_oryx_py/main)
+
 # scrape_oryx_py
 Python scraper for https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html
 
