@@ -5,4 +5,4 @@ R version: https://github.com/scarnecchia/scrape_oryx
 
 ## Issues
 * Underreporting: multiple equipment reports listed within one \<a\>-tag are currently treated as one.
-* 'Flag'-data is ignored, i.e., country of equipment origin. 
+* 'Flag'-data is ignored, i.e., country of equipment manufacturing. 
