@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import re
 import os
+from datetime import datetime
 pd.set_option('display.max_rows', None)
 
 URL = "https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html"
@@ -138,5 +139,7 @@ for section in all_russian_all_ukraine:
 df = pd.DataFrame(list_tmp, columns=['country', 'equipment_type', 'equipment_subtype', 'satus', 'source'])
 
 cwd = os.getcwd()
-path = cwd + '/export.csv'
+now = datetime.now()
+dt_string = now.strftime("%Y%m%d%H%M")
+path = cwd + '/export_' + dt_string + '.csv'
 df.to_csv(path)
