@@ -53,6 +53,8 @@ equipment_subtypes_auto
 status_types_auto_tmp = []
 status_types_auto = []
 
+all_a = soup.find_all('a')
+
 for a in all_a:
     status = re.search(r"\((.*)\)", a.get_text())
     if status is not None: 
