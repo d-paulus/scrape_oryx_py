@@ -15,3 +15,4 @@ R version: https://github.com/scarnecchia/scrape_oryx
 ## Issues
 * Underreporting: multiple equipment reports listed within one \<a\>-tag are currently treated as one.
 * 'Flag'-data is ignored, i.e., country of equipment manufacturing. 
+* Scraping some unnecessary elements as equipment types and statuses.
