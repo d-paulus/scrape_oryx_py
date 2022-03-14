@@ -131,10 +131,13 @@ for section in all_russian_all_ukraine:
                         current_a_text = re.sub("\(", "", current_a_text)
                         current_a_text = re.sub("\)", "", current_a_text)  
                         current_a_text = re.search(r"([^\,]+$)", current_a_text)
-                        current_a_text = current_a_text.group(0)
-                        current_a_text = re.sub(r"^\s", "", current_a_text)
-                        if status_i == current_a_text:
-                            list_tmp.append([country, current_type, current_subtype, current_a_text, single_report['href']])
+                        try:
+                            current_a_text = current_a_text.group(0)
+                            current_a_text = re.sub(r"^\s", "", current_a_text)
+                            if status_i == current_a_text:
+                                list_tmp.append([country, current_type, current_subtype, current_a_text, single_report['href']])
+                        except:
+                            pass
 
 df = pd.DataFrame(list_tmp, columns=['country', 'equipment_type', 'equipment_subtype', 'satus', 'source'])
 
