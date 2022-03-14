@@ -9,7 +9,8 @@ R version: https://github.com/scarnecchia/scrape_oryx
 ## Binder demo
 ![](binder_demo.gif)
 
-
+## Plotting Russian vs. Ukrainian losses
+![](plot.jpg)
 
 ## Issues
 * Underreporting: multiple equipment reports listed within one \<a\>-tag are currently treated as one.
