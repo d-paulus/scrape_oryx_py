@@ -128,6 +128,16 @@ for section in all_russian_all_ukraine:
                 
                     for single_report in li_a_list:
                         current_a_text = single_report.get_text()
+                        
+                        report_numbers = re.search(r"((?:\d+,\s*)+\d+\sand\s\d+|\d+,|\d+\sand\s\d+)", current_a_text)
+                        try:
+                            report_numbers_string = report_numbers.group()
+                            report_numbers_string = re.sub("and", "", report_numbers_string)
+                            report_numbers_string = re.sub(",", "", report_numbers_string)
+                            report_numbers_count = len(report_numbers_string.split())
+                        except:
+                            pass
+
                         current_a_text = re.sub("\(", "", current_a_text)
                         current_a_text = re.sub("\)", "", current_a_text)  
                         current_a_text = re.search(r"([^\,]+$)", current_a_text)
@@ -135,11 +145,16 @@ for section in all_russian_all_ukraine:
                             current_a_text = current_a_text.group(0)
                             current_a_text = re.sub(r"^\s", "", current_a_text)
                             if status_i == current_a_text:
-                                list_tmp.append([country, current_type, current_subtype, current_a_text, single_report['href']])
+                                for x in range(0, report_numbers_count):
+                                    list_tmp.append([country, current_type, current_subtype, current_a_text, single_report['href']])
                         except:
                             pass
+                        
+
 
 df = pd.DataFrame(list_tmp, columns=['country', 'equipment_type', 'equipment_subtype', 'satus', 'source'])
+
+df
 
 cwd = os.getcwd()
 now = datetime.now()
