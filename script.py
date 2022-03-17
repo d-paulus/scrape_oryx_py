@@ -110,7 +110,17 @@ for section in all_russian_all_ukraine:
                 li_list = ul.find_all('li')
                 
                 for li in li_list:
-                                
+                    
+                    strEmpty = str(element)
+                    
+                    if current_type == 'Surface-To-Air Missile Systems' and country == 'UKR':
+                        
+                        strEmpty_find = re.search(r"<h3>[\r\n]</h3>", strEmpty)
+                        
+                        if not strEmpty_find == None:
+                            break
+                        
+
                     li_a_list = li.find_all('a')
 
                     for equipment_subtype_i in equipment_subtypes_auto:
@@ -153,12 +163,14 @@ for section in all_russian_all_ukraine:
                                 if status_i == current_a_text:
                                     for x in range(0, report_numbers_count):
                                         list_tmp.append([country, current_type, current_subtype, current_a_text, single_report['href']])
-
-                            except:
+                            except Exception as e:
+                                #print(e)
                                 pass
                 
-            except:
+            except Exception as e: 
+                #print(e)
                 pass
+
                         
 df = pd.DataFrame(list_tmp, columns=['country', 'equipment_type', 'equipment_subtype', 'satus', 'source'])
 
