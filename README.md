@@ -3,6 +3,8 @@
 # scrape_oryx_py
 Python scraper for https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html
 
+Another Python version: https://github.com/jessicaw9910/oryx
+
 R version: https://github.com/scarnecchia/scrape_oryx
 
 
