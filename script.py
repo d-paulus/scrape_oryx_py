@@ -80,8 +80,6 @@ for h3_i in all_h3:
 
 all_russian_all_ukraine = [all_russian, all_ukraine]
 
-all_russian_all_ukraine = [all_russian, all_ukraine]
-
 list_tmp = []
 
 country = 'RUS'
